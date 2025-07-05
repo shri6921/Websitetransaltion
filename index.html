@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Text Translator (English to Marathi)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Camera Text Translator</h1>
+        <p>Point your camera at text to translate to Marathi</p>
+        
+        <div class="camera-container">
+            <video id="camera" autoplay playsinline></video>
+            <canvas id="canvas" style="display: none;"></canvas>
+        </div>
+        
+        <div class="controls">
+            <button id="capture-btn">Capture Text</button>
+            <button id="toggle-camera">Toggle Camera</button>
+            <select id="language-select">
+                <option value="mr">Marathi</option>
+                <option value="hi">Hindi</option>
+                <option value="ta">Tamil</option>
+                <option value="te">Telugu</option>
+            </select>
+        </div>
+        
+        <div class="results">
+            <div class="result-box">
+                <h3>Original Text</h3>
+                <div id="original-text" class="text-output"></div>
+            </div>
+            <div class="result-box">
+                <h3>Translation (<span id="language-name">Marathi</span>)</h3>
+                <div id="translated-text" class="text-output"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
